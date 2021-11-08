@@ -2,6 +2,12 @@
 require_once 'db.php';
 require_once 'lotto.php';
 
+if($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if(!empty($_POST['torlesID'])) {
+        $torles = $_POST['torlesID'];
+        lotto::delete($torles);
+    }
+}
 
 $data = lotto::getAllByID();
 
@@ -11,23 +17,38 @@ $data = lotto::getAllByID();
     <meta charset="UTF-8">
     <title>Lottoszamok</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>valami</h1>
-    <?php
-    foreach($data as $tomb) {
-        echo '<div class="container border">';
-        echo '<form method="POST">';
-        echo '<input type="hidden" name="deleteId" value="' . $tomb->getId() . '">';
-        echo '<h4 class="">'. $tomb->getJatekosNeve() .'       <button id="delBtn" class="btn" type="submit" >X</button></h4>';
-        echo '</form>';
-        echo '<p>Első szám: '. $tomb->getElsoSzam() .'</p>';
-        echo '<p>Második szám: '. $tomb->getMasodikSzam() .'</p>';
-        echo '<p>Harmadik szám: '. $tomb->getHarmadikSzam() .'</p>';
-        echo '<p>Negyedik szám: '. $tomb->getNegyedikSzam() .'</p>';
-        echo '<p>Ötödik szám: '. $tomb->getOtodikSzam() .'</p>';
-        echo '</div>';
-    }
-    ?>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+            <h1>Megjátszott lotto szelvények</h1>
+            <?php
+            foreach($data as $tomb) {
+                echo '<div class="container elem">';
+                echo '<form method="POST">';
+                echo '<table>';
+                echo '<input type="hidden" name="torlesID" value="' . $tomb->getId() . '">';  
+                echo '<tr><td>Játékos neve:</td><td>'. $tomb->getJatekosNeve() .'</td></tr>';
+                echo '<tr><td>Első szám:</td><td>'. $tomb->getElsoSzam() .'</td></tr>';
+                echo '<tr><td>Második szám:</td><td>'. $tomb->getMasodikSzam() .'</td></tr>';
+                echo '<tr><td>Harmadik szám:</td><td>'. $tomb->getHarmadikSzam() .'</td></tr>';
+                echo '<tr><td>Negyedik szám:</td><td>'. $tomb->getNegyedikSzam() .'</td></tr>';
+                echo '<tr><td>Ötödik szám:</td><td>'. $tomb->getOtodikSzam() .'</td></tr>';
+                echo '</table>';
+                echo '<button id="torlesgomb" class="torles" type="submit">Törlés</button>';
+                echo '</form>';
+                echo '</div>';
+            }
+            ?>
+            </div>
+            <div class="col-2">
+            </div>
+            <a href="ujLotto.php" class="hozzaadas">Szelvény hozzáadása</a>
+        </div>
+    </div>
 </body>
 </html>

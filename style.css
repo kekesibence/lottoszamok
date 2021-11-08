@@ -1,0 +1,108 @@
+body {
+    background-color:#fefbe9;
+    color: #183a1d;
+}
+
+.elem {
+    border:none;
+    background-color: #e1eedd;
+    padding: 1%;
+    margin: 1%;
+}
+
+input {
+    background-color:#fefbe9;
+    border-color: #183a1d;
+}
+
+.hiba {
+    color: red;
+}
+
+.hozzaadas:hover {
+    text-align: center;
+    text-decoration: none;
+    color: #f6c453;
+}
+
+.torles:hover {
+    text-align: center;
+    text-decoration: none;
+    color: #f6c453;
+}
+
+.vissza:hover {
+    text-align: center;
+    text-decoration: none;
+    color: #f6c453;
+}
+
+.vissza {
+    background-color:#fefbe9;
+    text-align: center;
+    font-size: 14pt;
+    text-decoration: none;
+    color: black;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.5%;
+    margin-top: 2%;
+    display: block;
+    align-self: center;
+    width: fit-content;
+}
+
+.torles {
+    background-color:#fefbe9;
+    text-align: center;
+    font-size: 14pt;
+    border-radius: 5%;
+    border-color: #f6c453;
+    border: solid, 1px;
+    color: black;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.5%;
+    margin-top: 1%;
+    display: block;
+    align-self: center;
+    width: fit-content;
+}
+
+.hozzaadas {
+    background-color:#fefbe9;
+    text-align: center;
+    font-size: 14pt;
+    border-radius: 5%;
+    border-color: #f6c453;
+    border: solid, 1px;
+    color: black;
+    width: fit-content;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 2%;
+    padding: 0.5%;
+}
+
+table {
+    margin-left: auto;
+    text-align: left;
+    margin-right: auto;
+}
+
+p {
+    padding-left: 0px;
+}
+
+h1 {
+    text-align: center;
+    font-variant: small-caps;
+    color: #f6c453;
+}
+
+h2 {
+    text-align: center;
+    color: #f6c453;
+}
+

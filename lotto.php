@@ -64,7 +64,7 @@ class Lotto {
         $datum = date('Y-m-d H:i:s');
 
         $db->prepare("INSERT INTO lottoszelvenyek (jatekosNeve, feladasDatuma, elsoSzam, masodikSzam, harmadikSzam, negyedikSzam, otodikSzam)
-                        VALUES (:jatekosNeve, :feladasDatuma, :, :mech, :htv)")
+                        VALUES (:jatekosNeve, :feladasDatuma, :elsoSzam, :masodikSzam, :harmadikSzam, :negyedikSzam, :otodikSzam)")
                     ->execute([ ':jatekosNeve' => $this->jatekosNeve,
                                 ':feladasDatuma' => $datum,
                                 ':elsoSzam' => $this->elsoSzam,
