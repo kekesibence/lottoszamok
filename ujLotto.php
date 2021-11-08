@@ -110,19 +110,19 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if(!empty($_POST['ujElsoSzam']) && !empty($_POST['ujMasodikSzam']) && !empty($_POST['ujHarmadikSzam']) && !empty($_POST['ujNegyedikSzam']) && !empty($_POST['ujOtodikSzam'])) {
-        if ($elsoSzam < 99){
+        if ($elsoSzam > 99){
             $elsoSzamHiba = true; 
             $elsoSzamHibaUzenet = "A szám nem lehet nagyobb mint 99";
-        } elseif ($masodikSzam < 99){
+        } elseif ($masodikSzam > 99){
             $masodikSzamHiba = true; 
             $masodikSzamHibaUzenet = "A szám nem lehet nagyobb mint 99";
-        } elseif ($harmadikSzam < 99){
+        } elseif ($harmadikSzam > 99){
             $harmadikSzamHiba = true; 
             $harmadikSzamHibaUzenet = "A szám nem lehet nagyobb mint 99";
-        } elseif ($negyedikSzam < 99){
+        } elseif ($negyedikSzam > 99){
             $negyedikSzamHiba = true; 
             $negyedikSzamHibaUzenet = "A szám nem lehet nagyobb mint 99";
-        } elseif ($otodikSzam < 99){
+        } elseif ($otodikSzam > 99){
             $otodikSzamHiba = true; 
             $otodikSzamHibaUzenet = "A szám nem lehet nagyobb mint 99";
         }
